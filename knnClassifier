@@ -1,0 +1,29 @@
+points = [[2,4],[3,3],[3,5],[5.5,3],[5,5],[4,2],[4,4],[4,6],[4,8]]
+colors = ['Blue','Blue','Blue','Blue','Blue','Red','Red','Red','Red']
+data = [[6,4],[4,5],[5,3],[2,7]]
+
+def euclidean(a,b):
+    dist = sqrt(((a[0]-b[0])**2)+(a[1]-b[1])**2)
+    return dist
+
+bigList=[]
+for i in data:
+    distList = []
+    for j in points:
+        distance = euclidean(i,j)
+        distList.append(distance)
+    #print(distList)
+    bigList.append(distList)
+print(bigList)
+
+for i in bigList:
+    littleList = []
+    for j in sorted(i):
+        littleList.append(j)
+    print("3-NN = " + str(littleList[0:3]))
+    
+for i in bigList:
+    littlerList = []
+    for j in sorted(i):
+        littlerList.append(j)
+    print("1-NN = " + str(littlerList[0:1]))
